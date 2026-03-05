@@ -1,0 +1,61 @@
+:root {
+    --bg-gradient: linear-gradient(135deg, #020617 0%, #0f172a 100%);
+    --accent: #38bdf8;
+    --btn-grad: linear-gradient(90deg, #38bdf8, #818cf8);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg-gradient); color: white; overflow-x: hidden; font-size: 18px; }
+
+/* Navbar */
+.navbar { position: fixed; top: 0; width: 100%; padding: 1.5rem 10%; display: flex; justify-content: space-between; align-items: center; background: rgba(2, 6, 23, 0.85); backdrop-filter: blur(12px); z-index: 1000; }
+.logo span { color: var(--accent); }
+.nav-links { display: flex; list-style: none; gap: 2.5rem; }
+.nav-links a { color: white; text-decoration: none; font-size: 1.1rem; }
+
+/* Hero Animations */
+.hero { height: 100vh; display: flex; align-items: center; padding: 0 10%; }
+.hero-container { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+.hero-content { opacity: 0; transform: translateX(-100px); animation: slideInLeft 1.2s forwards; }
+.hero-image { opacity: 0; transform: translateY(100px); animation: slideUp 1.2s forwards; }
+@keyframes slideInLeft { to { opacity: 1; transform: translateX(0); } }
+@keyframes slideUp { to { opacity: 1; transform: translateY(0); } }
+
+.big-name { font-size: 5.5rem; font-weight: 900; }
+.typewriter-container { color: var(--accent); font-size: 2rem; height: 40px; margin: 15px 0; }
+.img-frame img { width: 180px; height: 180px; object-fit: cover; border-radius: 24px; border: 2px solid var(--accent); }
+
+/* Academic & Dance */
+section { padding: 100px 10%; }
+.section-header { font-size: 2.8rem; margin-bottom: 3rem; color: var(--accent); }
+.card { background: rgba(30, 41, 59, 0.4); border-radius: 25px; padding: 40px; }
+.academic-visuals { display: flex; gap: 15px; }
+.dept-img { width: 160px; height: 160px; border-radius: 12px; object-fit: cover; }
+
+/* Artistry 50px Font Fix */
+.quote { font-size: 40px !important; font-weight: 900; color: var(--accent); line-height: 1.2; margin-bottom: 1.5rem; }
+.art-img { width: 300px; height: 380px; object-fit: cover; border-radius: 20px; }
+
+/* Project HERO STYLE */
+.project-card { display: grid; grid-template-columns: column; align-items: center; }
+.project-previews-large { display: grid; gap: 40px; margin-top: 2rem; flex-wrap: wrap; justify-content: center; }
+.project-hero-img { width: 100% !important; height: 100% !important; object-fit: cover; border-radius: 24px; border: 2px solid var(--accent); box-shadow: 0 20px 50px rgba(0,0,0,0.5); transition: 0.4s; }
+.project-hero-img:hover { transform: translateY(-10px); }
+
+/* Sports Section */
+.sports-dual-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.sport-item { position: relative; border-radius: 20px; overflow: hidden; height: 350px; background: #111; }
+.sport-item img { width: 100%; height: 100%; object-fit: cover; }
+.sport-overlay { position: absolute; bottom: 0; padding: 1.5rem; background: linear-gradient(transparent, #000); width: 100%; font-weight: bold; }
+
+/* Buttons & Footer */
+.btn-gradient { padding: 1rem 2.5rem; background: var(--btn-grad); color: #000; border-radius: 50px; font-weight: 800; text-decoration: none; display: inline-block; }
+.btn-outline { padding: 1rem 2.5rem; border: 1px solid var(--accent); color: var(--accent); border-radius: 50px; text-decoration: none; margin-left: 1rem; display: inline-block; }
+footer { background: #000; padding: 80px 10%; text-align: center; border-top: 1px solid #111; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0; }
+.contact-card-item { background: #111; padding: 20px; border-radius: 15px; display: flex; align-items: center; justify-content: center; gap: 15px; }
+.social-pills { display: flex; justify-content: center; gap: 15px; }
+.pill { padding: 12px 25px; border-radius: 50px; background: #1a1a1a; color: white; text-decoration: none; border: 1px solid #333; }
+.reveal { opacity: 0; transform: translateY(30px); transition: 1s ease-out; }
+.reveal.active { opacity: 1; transform: translateY(0); }
